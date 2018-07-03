@@ -1,0 +1,47 @@
+#root {
+    height: 97vh;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.calc {
+    padding: 5px;
+    background-color: black;
+    margin: auto;
+}
+
+#display {
+    display: flex;
+    flex-direction: column;
+}
+
+.formula-screen {
+    height: 25px;
+    background-color: red;
+    padding: 2px;
+}
+
+.output-screen {
+    height: 30px;
+    background-color: cyan;
+    padding: 2px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    height: 80px;
+    width: 80px;
+}
+
+.row {
+    display: flex;
+}
+
+.row:last-child > .btn:first-child {
+    flex: 2;
+}
