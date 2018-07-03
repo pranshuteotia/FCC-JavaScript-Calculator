@@ -11,7 +11,7 @@
     margin: auto;
 }
 
-#display {
+.output-container {
     display: flex;
     flex-direction: column;
 }
@@ -23,7 +23,7 @@
     text-align: right;
 }
 
-.output-screen {
+#display {
     height: 30px;
     background-color: cyan;
     padding: 2px;
@@ -42,6 +42,10 @@
 
 .row {
     display: flex;
+}
+
+.row:first-child > .btn:first-child {
+    flex: 2;
 }
 
 .row:last-child > .btn:first-child {
