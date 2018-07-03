@@ -20,12 +20,14 @@
     height: 25px;
     background-color: red;
     padding: 2px;
+    text-align: right;
 }
 
 .output-screen {
     height: 30px;
     background-color: cyan;
     padding: 2px;
+    text-align: right;
 }
 
 .buttons-container {
