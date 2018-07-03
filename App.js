@@ -213,26 +213,32 @@ class Calculator extends React.Component {
 
         this.setState({
             display: dispArr.join(""),
-            formula: formulaArr.join("")
+            formula: formulaArr.join(""),
+            reachedMaxLimit: false
         });
     }
 
     render() {
         return(
-            <div className="calc">
-                <div id="output-container">
-                    <div className="formula-screen">{this.state.formula.toString().replace(r, "")}</div>
-                    <div id="display">{this.state.display}</div>
+            <div className="container">
+                <div className="calc">
+                    <div id="output-container">
+                        <div className="formula-screen">{this.state.formula.toString().replace(r, "")}</div>
+                        <div id="display">{this.state.display}</div>
+                    </div>
+                    <Buttons
+                        numHandler={this.handleNumbers}
+                        init={this.initialize}
+                        opeHandler={this.handleOperators}
+                        eval={this.evaluate}
+                        /*togSign={this.toggleSign}*/
+                        decHandler={this.handleDecimal}
+                        delHandler={this.handleDel}
+                    />
                 </div>
-                <Buttons
-                    numHandler={this.handleNumbers}
-                    init={this.initialize}
-                    opeHandler={this.handleOperators}
-                    eval={this.evaluate}
-                    /*togSign={this.toggleSign}*/
-                    decHandler={this.handleDecimal}
-                    delHandler={this.handleDel}
-                />
+                <div className="author">
+                    <h1>Designed and Coded by Pranshu Teotia</h1>
+                </div>
             </div>
         );
     }
@@ -244,27 +250,27 @@ class Buttons extends React.Component {
             <div className="buttons-container">
                 <div className="row">
                     <button id="clear" value="AC" className="btn" onClick={this.props.init}>AC</button>
-                    <button value="DEL" className="btn" onClick={this.props.delHandler}>DEL</button>
+                    <button value="DEL" className="ope btn" onClick={this.props.delHandler}>DEL</button>
                     {/*<button value="±" className="btn" onClick={this.props.togSign}>±</button>*/}
-                    <button id="divide" value="/" className="btn" onClick={this.props.opeHandler}>/</button>
+                    <button id="divide" value="/" className="ope btn" onClick={this.props.opeHandler}>/</button>
                 </div>
                 <div className="row">
                     <button id="seven" value="7" className="btn" onClick={this.props.numHandler}>7</button>
                     <button id="eight" value="8" className="btn" onClick={this.props.numHandler}>8</button>
                     <button id="nine" value="9" className="btn" onClick={this.props.numHandler}>9</button>
-                    <button id="multiply" value="*" className="btn" onClick={this.props.opeHandler}>X</button>
+                    <button id="multiply" value="*" className="ope btn" onClick={this.props.opeHandler}>X</button>
                 </div>
                 <div className="row">
                     <button id="four" value="4" className="btn" onClick={this.props.numHandler}>4</button>
                     <button id="five" value="5" className="btn" onClick={this.props.numHandler}>5</button>
                     <button id="six" value="6" className="btn" onClick={this.props.numHandler}>6</button>
-                    <button id="subtract" value="-" className="btn" onClick={this.props.opeHandler}>-</button>
+                    <button id="subtract" value="-" className="ope btn" onClick={this.props.opeHandler}>-</button>
                 </div>
                 <div className="row">
                     <button id="one" value="1" className="btn" onClick={this.props.numHandler}>1</button>
                     <button id="two" value="2" className="btn" onClick={this.props.numHandler}>2</button>
                     <button id="three" value="3" className="btn" onClick={this.props.numHandler}>3</button>
-                    <button id="add" value="+" className="btn" onClick={this.props.opeHandler}>+</button>
+                    <button id="add" value="+" className="ope btn" onClick={this.props.opeHandler}>+</button>
                 </div>
                 <div className="row">
                     <button id="zero" value="0" className="btn" onClick={this.props.numHandler}>0</button>

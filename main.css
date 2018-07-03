@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+body {
+    background: #eee;
+}
+
 #root {
     height: 97vh;
     display: flex;
@@ -5,29 +11,37 @@
     align-items: center;
 }
 
+.container { margin: auto;}
+
 .calc {
     padding: 5px;
     background-color: black;
-    margin: auto;
 }
 
 .output-container {
     display: flex;
     flex-direction: column;
+    font-weight: bold;
 }
 
 .formula-screen {
     height: 25px;
-    background-color: red;
+    background-color: #000;
     padding: 2px;
     text-align: right;
+    color: orange;
+    font-size: 15px;
+    font-family: 'Audiowide', cursive;
 }
 
 #display {
     height: 30px;
-    background-color: cyan;
+    background-color: #000;
     padding: 2px;
     text-align: right;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Audiowide', cursive;
 }
 
 .buttons-container {
@@ -38,6 +52,31 @@
 .btn {
     height: 80px;
     width: 80px;
+    border: 1px solid black;
+    outline: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: orange;
+}
+
+.btn:active {
+    background: darkorange;
+}
+
+.ope {
+    background: #888;
+}
+
+.ope:hover {
+    background: darkorange;
+}
+
+.ope:active {
+    background: #cc7000;
 }
 
 .row {
@@ -50,4 +89,35 @@
 
 .row:last-child > .btn:first-child {
     flex: 2;
+}
+
+.author {
+    width: 50%;
+    text-align: center;
+    font-size: 8px;
+    margin: auto;
+}
+
+#clear {
+    background: crimson;
+}
+
+#clear:hover {
+    background: red;
+}
+
+#clear:active{
+    background: darkred;
+}
+
+#equals {
+    background: dodgerblue;
+}
+
+#equals:hover {
+    background: mediumblue;
+}
+
+#equals:active {
+    background: blue;
 }
